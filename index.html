@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;1,300&family=Shalimar&display=swap"
+        rel="stylesheet">
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Card Game</title>
+
+</head>
+
+<body>
+    <h1 class="page-title">Mix or Match</h1>
+    <div id="start" class="overlay-text visible">
+        START
+    </div>
+    <div id="game-over" class="overlay-text visible">
+        GAME OVER
+        <span class="overlay-text-small" id="restart">Click to restart</span>
+    </div>
+    <div class="overlay-text visible" id=win>
+        You WIN!
+    </div>
+
+    <div class="game-container">
+        <div class="game-info-container">
+            <div class="game-info">
+                Time <span id="time-remaining">120</span>
+            </div>
+            <div class="game-info">
+                Flips <span id="flips">0</span>
+            </div>
+
+        </div>
+
+        <audio src="assets/Assets_Audio_flip.wav" id="flipAudio"></audio>
+        <audio src="assets/Assets_Audio_match.wav" id="matchAudio"></audio>
+
+        <div class="card">
+            <div class="card-back card-face" id="pikacu">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible card-face">
+                <img src="assets/pikacu.png" class="card-value" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face" id="mickey">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible  card-face">
+                <img src="assets/mickey.png" class="card-value" alt="">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-back card-face" id="bugs_bunny">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible card-face">
+                <img src="assets/bugs_bunny.png" class="card-value" alt="">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-back card-face" id="fred">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible  card-face">
+                <img src="assets/fred.png" class="card-value" alt="">
+            </div>
+        </div>
+       
+
+        <div class="card">
+            <div class="card-back card-face" id="patrick">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible  card-face">
+                <img src="assets/patrick.png" class="card-value" alt="">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-back card-face" id="simpsons">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible  card-face">
+                <img src="assets/simpsons.png" class="card-value" alt="">
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-back card-face" id="patrick">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible  card-face">
+                <img src="assets/patrick.png" class="card-value" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face" id="tom">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible  card-face">
+                <img src="assets/tom.png" class="card-value" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face" id="mickey">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible  card-face">
+                <img src="assets/mickey.png" class="card-value" alt="">
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="card-back card-face" id="pikacu">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible card-face">
+                <img src="assets/pikacu.png" class="card-value" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face" id="fred">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible  card-face">
+                <img src="assets/fred.png" class="card-value" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face" id="winnie">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible  card-face">
+                <img src="assets/winnie.png" class="card-value" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face" id="tom">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible  card-face">
+                <img src="assets/tom.png" class="card-value" alt="">
+            </div>
+        </div>
+      
+        <div class="card">
+            <div class="card-back card-face" id="bugs_bunny">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible  card-face">
+                <img src="assets/bugs_bunny.png" class="card-value" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face" id="winnie">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible  card-face">
+                <img src="assets/winnie.png" class="card-value" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face" id="simpsons">
+                <img src="assets/yaprak.png" class="yaprak" alt="">
+            </div>
+            <div class="card-front-visible  card-face">
+                <img src="assets/simpsons.png" class="card-value" alt="">
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- Js Files -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

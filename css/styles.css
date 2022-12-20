@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    /* radial gradientin görünümünü değiştirdik */
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(#9d5900, #3d2200);
+}
+
+.page-title {
+    color: #FF6D00;
+    font-family: 'Shalimar';
+    font-size: 6em;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+.game-info-container {
+    grid-column: 1/-1;
+    justify-content: space-between;
+    display: flex;
+}
+
+.game-info {
+    font-family: 'Merriweather';
+    font-size: 3em;
+    color: #FFBB89;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    margin: 50px;
+    justify-content: center;
+    perspective: 500px;
+}
+
+.card {
+    position: relative;
+    height: 150px;
+    width: 100px;
+
+}
+
+.card-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    border-radius: 14px;
+    border-width: 1px;
+    border-style: solid;
+    overflow: hidden;
+    transition: transform 300ms ease-in-out;
+
+}
+
+/* Visible yerine hover yazarak ne yaptığını anlayabilirsin.Visible js ile aktifleşecek. */
+
+.card-back {
+    display: flex;
+}
+
+.card-front-visible {
+    display: none;
+    background-color: antiquewhite;
+
+}
+
+.matched {
+    animation: dance 1s linear 25ms;
+    /* Kartlar eşleştiğinde(matched classı ile) resimleri dans ettir */
+}
+
+@keyframes dance {
+
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(-15deg);
+    }
+
+    75% {
+        transform: rotate(15deg);
+    }
+}
+
+.overlay-text {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    color: #FF6D00;
+    font-family: 'Shalimar'
+}
+
+.overlay-text-small {
+    font-size: .3em;
+    display: flex;
+
+}
+
+.overlay-text.visible {
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+}
+
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, .8);
+        font-size: 10em;
+    }
+}
+
+.flip {
+    display: none;
+}
+
+.card-front-visible:hover .card-value {
+    transform: scale(1);
+}
+
+.card-value {
+    transform: scale(0.9);
+    width: 120px;
+    height: 100px;
+}
+
+.card-back {
+    background-color: black;
+    border-color: #FF6D00;
+}
+
+.yaprak {
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    transform: translateY(-10px);
+    transition: transform 100ms ease-in-out;
+}
+
+.card-back:hover .yaprak {
+    transform: translateY(0);
+}
+
+@media (max-width:600px) {
+    .game-container {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .game-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
